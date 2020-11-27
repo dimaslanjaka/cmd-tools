@@ -89,7 +89,7 @@ IF DEFINED CYGWIN_HOME (
 
 IF NOT EXIST "C:\Python27" (
   powershell.exe -Command "(New-Object Net.WebClient).DownloadFile('%python_url%', 'python.msi')"
-  echo "please install %DIR%python.msi"
+  echo "please install %DIR%python.msi and set folder installation to C:\Python27. press enter to continue without python 2.7"
   pause
 )
 
@@ -115,8 +115,8 @@ echo Current Active Dependencies
 where java.exe >nul 2>&1 && java -version || echo java not installed
 where python.exe >nul 2>&1 && python -V || echo python not installed
 where node.exe >nul 2>&1 && echo Node %NODE_VERSION% || echo node not installed
-echo. 
-rem echo List installed java versions 
+echo.
+rem echo List installed java versions
 rem DIR "%JAVA_DIR%" /B
 rem echo.
 GOTO BEGIN
@@ -126,7 +126,7 @@ GOTO BEGIN
     echo 1 - CMD
     echo 2 - POWERSHELL
     echo 3 - PING
-    echo 4 - (universal-framework) Re-build Compiler 
+    echo 4 - (universal-framework) Re-build Compiler
     echo 5 - Travis Log Clear
     echo 6 - Install NodeJS Components
     echo 7 - Delete Git Commit Histories
@@ -180,7 +180,7 @@ GOTO BEGIN
       cmd.exe /k "@echo OFF & cls & git checkout --orphan latest_branch & git add -A & git commit -am \"%commit%\" & git branch -D master & git branch -m master & git push -f origin master"
     )
 
-:LABEL-8 JDK 
+:LABEL-8 JDK
     cmd.exe /k "@echo OFF & jvms & exit"
     start "" "%~f0"
     exit
