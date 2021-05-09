@@ -1,6 +1,0 @@
-{
-  "workbench.editor.wrapTabs": true,
-  "files.exclude": {
-    "Microsoft.**.**": true
-  }
-}
