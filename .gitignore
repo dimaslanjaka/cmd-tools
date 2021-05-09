@@ -1,0 +1,8 @@
+*
+!.vscode/
+!.vscode/*
+!*.exe
+!LICENSE
+!*.bat
+!*.md
+!.gitignore
